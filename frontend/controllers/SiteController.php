@@ -202,7 +202,7 @@ class SiteController
                 $user->login_from_ip = $_SERVER['REMOTE_ADDR'];
                 $user->insert();
 
-                $url = Yii::$app->urlManager->createUrl(['site/index2']);
+                $url = Yii::$app->urlManager->createUrl(['site/index3']);
 
                 $id = LoginForm::getLastInsertedRecord($userAttributes['email']);
                 $user_id = $id['_id'];
@@ -213,7 +213,7 @@ class SiteController
                 // getLastInsertedRecord
                 // fetch all post 
                 // $posts = PostForm::getAllPost();
-                // return $this->render('index2',array('posts' => $posts));
+                // return $this->render('index3',array('posts' => $posts));
             }
         }
     }
@@ -266,13 +266,14 @@ class SiteController
             array_unshift($usrfrdlist, $f);
             array_unshift($usrfrdlist, $fof);
 
-            return $this->render('index2',
+            return $this->render('index3',
                             array(
                         'model' => $model,
                         'posts' => $posts,
                         'nrusrfrdlist' => $nrusrfrdlist,
                         'frdlist' => $usrfrdlist));
             }
+			
         } else {
             return $this->render('index',['model' => $model,
             ]);
@@ -284,7 +285,7 @@ class SiteController
      *
      * @return mixed
      */
-    public function actionIndex2() {
+    public function actionIndex3() {
         $title = 'sd';
           $model =
                 new \frontend\models\LoginForm();
@@ -342,7 +343,7 @@ class SiteController
                 $count =  count($posts);
             else
                 $count = 0;
-            return $this->render('index2',
+            return $this->render('index3',
                             array(
                         'model' => $model,
                         'posts' => $posts,
@@ -1043,7 +1044,7 @@ class SiteController
                         $update->login_from_ip = $_SERVER['REMOTE_ADDR'];
                         $update->update();
                         $session->set('user_id',$user_id);
-                        $url = Yii::$app->urlManager->createUrl(['site/index2']);
+                        $url = Yii::$app->urlManager->createUrl(['site/index3']);
                         Yii::$app->getResponse()->redirect($url);
                     } else if ($value == "2") {
 
@@ -1083,12 +1084,12 @@ class SiteController
               $cemail = $cookies->getValue('email');
               $session = Yii::$app->session;
               $session->set('email',$email);
-              $url = Yii::$app->urlManager->createUrl(['site/index2']);
+              $url = Yii::$app->urlManager->createUrl(['site/index3']);
               Yii::$app->getResponse()->redirect($url);
               } */
             if ($session->get('email')) {
                 $url =
-                        Yii::$app->urlManager->createUrl(['site/index2']);
+                        Yii::$app->urlManager->createUrl(['site/index3']);
 
 
 
@@ -1360,7 +1361,7 @@ class SiteController
                     $session->set('user_id',
                     $travid);
                     $url =
-                            Yii::$app->urlManager->createUrl(['site/index2']);
+                            Yii::$app->urlManager->createUrl(['site/index3']);
                     Yii::$app->getResponse()->redirect($url);
                     //echo json_encode($data);
                 } else {
@@ -1572,7 +1573,7 @@ class SiteController
         
             $this->display_last_post($last_insert_id);
             /*
-              $url = Yii::$app->urlManager->createUrl(['site/index2']);
+              $url = Yii::$app->urlManager->createUrl(['site/index3']);
               Yii::$app->getResponse()->redirect($url); */
         } else {
             echo "0";
@@ -2265,7 +2266,7 @@ class SiteController
                     $session->set('email',
                             $_POST['finalmail']);
                     $url =
-                            Yii::$app->urlManager->createUrl(['site/index2']);
+                            Yii::$app->urlManager->createUrl(['site/index3']);
                     Yii::$app->getResponse()->redirect($url);
                     //echo json_encode($data);
                 } else {
@@ -3778,11 +3779,12 @@ class SiteController
                     if(($lookup_settings == 'Public') || ($lookup_settings == 'Friends' && ($is_friend || $guserid == $suserid)) || ($lookup_settings == 'Private' && $guserid == $suserid)) {
                     ?>
                         <li>
-                            <a href="index.php?r=userwall%2Findex&id=<?= $val->_id ?>" class="search-rlink"><span class="display_box" align="left">
+                            <a href="index.php?r=userwall%2Findex&id=<?= $val->_id ?>" class="search-link"><span class="display-box">
                                     <span class="img-holder">
 
                     <?php
                     $dp = $this->getimage($val['_id'],'thumb');
+					if(empty($val->city)){$val->city = '&nbsp;';}
                     ?>
                                         <img src="<?= $dp?>" alt="">
                                     </span>
@@ -3797,7 +3799,8 @@ class SiteController
                     <?php }
                     }
                     
-                    ?><li class="morelink"><a href="<?= Url::to(['site/search-friend-list', 'name' => "$email"]); ?>">See More Friends</a></li></ul><?php
+                    ?>
+					<li class="morelink"><a href="<?= Url::to(['site/search-friend-list', 'name' => "$email"]); ?>">See More Friends</a></li></ul><?php
             } else {
                 ?>
                 <div class="noresult"><p>Sorry, No Result Found!</p></div>

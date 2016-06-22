@@ -2,9 +2,8 @@
 <input type="hidden" id="url_new" name="url_new" value="<?php echo Yii::$app->urlManager->createUrl(['site/new-post']); ?>" />
 <input type="hidden" id="url_upload" name="url_upload" value="<?php echo Yii::$app->urlManager->createUrl(['site/upload']); ?>" />
 <input type="hidden" id="url_addfriend" name="url_addfriend" value="<?php echo Yii::$app->urlManager->createUrl(['friend/add-friend']); ?>" />
-<input type="hidden" id="url_acceptfriend" name="url_acceptfriend" value="<?php echo Yii::$app->urlManager->createUrl(['friend/accept-friend']); ?>" /> 
+<input type="hidden" id="url_acceptfriend" name="url_acceptfriend" value="<?php echo Yii::$app->urlManager->createUrl(['friend/accept-friend']); ?>" />
 
-   
 <?php if (isset($count)) { ?>
     <input type="hidden" id="hiddenCount" value="<?php echo $count; ?>">
 <?php } else {
@@ -476,7 +475,7 @@
                   
                     $('#notifications').html(response);
                     var budge = $("#new_budge").val();
-                   
+                    
                     if(budge > 0){
                        // alert($("#noti_budge").length+'len');
                         if($("#noti_budge").length)
@@ -486,6 +485,11 @@
                         }
                         else
                         {//alert('else');
+                            var not_sound = $("#notification_sound").val();
+                            if(not_sound == 'Yes')
+                            {
+                                document.getElementById("soundplay").play();
+                            }
                             $("#glob_budge").append('<span id="noti_budge" class="badge badge-default">'+budge+' </span>');
                         }
                     }
@@ -1704,8 +1708,10 @@ else{
         $("#cur_loc").val("");
         $(".tarrow").removeClass("tarrow1");
         $(".alink").removeClass("alink1");
-	    $(".addpost-location").hide();
+        $(".addpost-location").hide();
         $('#share_setting').val("Enable");
+        $(".dis_share").hide();
+        $(".dis_comment").hide();
         $('#comment_setting').val("Enable");
         $("#imgfilecount").val(0);
         jq.magnificPopup.close();
@@ -1757,6 +1763,30 @@ else{
                 $("#frndid").val('');
                 $(".frnduname").val('');
                 document.getElementById('friendlist').style.display = "none";
+            });
+            $(".disable_share1").click(function(){
+                if($("#share_setting").val() == 'Enable')
+                {
+                    $(".dis_share").show();
+                    $("#share_setting").val('Disable');
+                }
+                else
+                {
+                    $(".dis_share").hide();
+                    $("#share_setting").val('Enable');
+                }
+            });
+            $(".disable_comment1").click(function(){
+                if($("#comment_setting").val() == 'Enable')
+                {
+                    $(".dis_comment").show();
+                    $("#comment_setting").val('Disable');
+                }
+                else
+                {
+                    $(".dis_comment").hide();
+                    $("#comment_setting").val('Enable');
+                }
             });
             $(".frnduname").keyup(function (e) {
                 friendnames(this, e);
@@ -2199,15 +2229,6 @@ function addalbum()
 	 });
          
 	
-	$("#imageFile1").change(function(){
-		var demo = $("#imageFile1")[0].files;
-		 var names = [];
-	    for (var i = 0; i < demo.length; ++i) {
-	       console.log(demo[i].naturalWidth);
-
-	    }
-	});
-
 	var lastModified = [];
 	var newct=0;
 	function addimg_filechange(cls, obj, t){
@@ -2238,7 +2259,6 @@ function addalbum()
 				 //loop for each file selected for uploaded.
 				 for (var i = 0; i < countFiles; i++) {
 					  file = obj.files[i];
-					  console.log(file.width);
 					  //console.log(file);
 					  lastModified.push(file.lastModified);
 					  //console.log("lastModified= " + file.lastModified);
@@ -2660,6 +2680,7 @@ function addalbum()
         var name = $(e).data("name");
         if(name != undefined || name != null || name != '') {
         	if(name == 'cancel_post') {
+			
         		resetAllNewPostInputsAndOther();
         	}
         }
@@ -2667,6 +2688,7 @@ function addalbum()
 
     // Call When cancel post click ans reset all new post inputs ans div / spn etc...
     function resetAllNewPostInputsAndOther() {
+		
     	$('.tags-added').html('');
         $('#taginput').val("");
         $('#customin1').val("");
@@ -2676,6 +2698,7 @@ function addalbum()
         $('.select2-selection__rendered').html('');
         $('.addpost-tag').hide();
         $("#newPost").hide();
+        $('.textInput').val("");
         $('#textInput').val("");
         $("#imageFile1").val("");
         $("#image-holder").hide();
@@ -2697,6 +2720,9 @@ function addalbum()
         $('#share_setting').val("Enable");
         $('#comment_setting').val("Enable");
         $("#imgfilecount").val(0);
+		lastModified = [];
+		storedFiles = [];
+		storedFiles.length = 0;
         
 	}
 
@@ -3564,7 +3590,6 @@ function addalbum()
 	});
 	
 	/* End Settings Side Menu */
-        
         $(document).ready(function()
         {
             $(".disable_share").click(function(){
@@ -3612,7 +3637,7 @@ function addalbum()
                 $(".dis_share").hide();
                 $("#share_setting").val('Enable');
                 $(".dis_comment").hide();
-				$("#comment_setting").val('Enable');
+                $("#comment_setting").val('Enable');
                 toggleAbilityPostButton(HIDE);
             });
 	});
@@ -3724,8 +3749,10 @@ function addalbum()
 	
 	/* scroll to top */	
 	$(document).ready(function(){
+ 
 		$(".scrollup").hide();				
 		$(".addpost-sc").hide();				
+
 	});
 	$(window).scroll(function() {
 		//clearTimeout($.data(this, 'scrollTimer'));

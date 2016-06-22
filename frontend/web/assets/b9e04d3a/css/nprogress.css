@@ -1,0 +1,101 @@
+/* Make clicks pass-through */
+#nprogress {
+	background: rgba(0,0,0,0.2);
+	display: block;
+	height: 3px;
+	left: 0;
+	pointer-events: none;
+	position: absolute;
+	right: 0;
+	top: 70px;
+}
+
+#nprogress .bar {
+  background: #f3d548;
+  position: fixed;
+  z-index: 1031;
+  top:68px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  border:none;
+  /*box-shadow: 0 0 5px rgba(0,0,0,0.8);*/
+}
+
+/* Fancy blur effect */
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;  
+  opacity: 1.0;
+  display:none;
+
+  -webkit-transform: rotate(3deg) translate(0px, -4px);
+      -ms-transform: rotate(3deg) translate(0px, -4px);
+          transform: rotate(3deg) translate(0px, -4px);
+}
+
+/* Remove these to get rid of the spinner */
+#nprogress .spinner {
+  display: block;
+  position: fixed;
+  z-index: 1031;
+  top: 15px;
+  right: 15px;
+}
+
+#nprogress .spinner-icon {
+  width: 18px;
+  height: 18px;
+  box-sizing: border-box;
+
+  border: solid 3px transparent;
+  border-top-color: #29d;
+  border-left-color: #29d;
+  border-radius: 50%;
+
+  -webkit-animation: nprogress-spinner 400ms linear infinite;
+          animation: nprogress-spinner 400ms linear infinite;
+}
+
+.nprogress-custom-parent {
+  overflow: hidden;
+  position: relative;
+}
+
+.nprogress-custom-parent #nprogress .spinner,
+.nprogress-custom-parent #nprogress .bar {
+  position: absolute;
+}
+
+@-webkit-keyframes nprogress-spinner {
+  0%   { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes nprogress-spinner {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media screen and (min-width:300px){
+	#nprogress,
+	#nprogress .bar {top:132px;}
+}
+@media screen and (min-width:400px){
+	#nprogress,
+	#nprogress .bar {top:134px;}
+}
+@media screen and (min-width:600px){
+	#nprogress,
+	#nprogress .bar {top:93px;}
+}
+@media screen and (min-width:768px){
+	#nprogress,
+	#nprogress .bar {top:110px;}
+}
+@media screen and (min-width:1024px){
+	#nprogress,
+	#nprogress .bar {top:70px;}
+}

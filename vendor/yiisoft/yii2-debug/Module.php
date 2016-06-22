@@ -30,7 +30,7 @@ class Module extends \yii\base\Module implements BootstrapInterface
      * The default value is `['127.0.0.1', '::1']`, which means the module can only be accessed
      * by localhost.
      */
-    public $allowedIPs = ['127.0.0.1', '::1', '192.168.1.101'];
+    public $allowedIPs = ['127.0.0.1', '::1'];
     /**
      * @var array the list of hosts that are allowed to access this module.
      * Each array element is a hostname that will be resolved to an IP address that is compared

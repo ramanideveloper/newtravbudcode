@@ -1,4 +1,3 @@
-<?php
 	include('includes/header.php');
 
 	use yii\helpers\Html;
@@ -16,6 +15,7 @@
 	use frontend\models\Personalinfo;
 	use frontend\models\SecuritySetting;
 	use yii\helpers\ArrayHelper;
+
 
 	$count = count($posts);
 	$session = Yii::$app->session;

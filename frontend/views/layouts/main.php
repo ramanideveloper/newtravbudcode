@@ -24,7 +24,14 @@ $email = $session->get('email');
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Travel Web</title>
-			<link rel="shortcut icon" href="<?php echo Yii::$app->request->baseUrl; ?>/favicon.ico" type="image/x-icon" />
+			<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+	
+<?php $cont = isset(Yii::$app->controller->id) ? Yii::$app->controller->id : '';
+	$tit = isset($this->context->action->id) ? $this->context->action->id : '';
+	if(isset($cont) && isset($tit)) {
+	if($cont == 'site' && $tit != 'index3') {
+?>
+	
       
           <link href="<?= $baseUrl?>/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
           <link href="<?= $baseUrl?>/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
@@ -115,15 +122,11 @@ $email = $session->get('email');
 		<!-- end contenxt menu js -->
 
 		<!--<script src="<?= $baseUrl?>/js/jquery.flexslider.js" type="text/javascript"></script>-->
-
-		
-
-		
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
-<body class="theme-dark-blue">
+<body class="theme-dark-blue loaded">
 
 <?php
 
@@ -140,6 +143,48 @@ if(isset($cont) && isset($tit)) {
 
 	</div>
 <?php } } ?>
+		
+	<?php } else {
+		?>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="css/template.css" rel="stylesheet">
+    <link href="css/custom-responsive.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/magnific-popup.css" rel="stylesheet">
+    <link href="css/bootstrap-dialog.min.css" rel="stylesheet">
+    <link href="css/bootstrap-dialog.min.css" rel="stylesheet">
+	
+	<!-- tooltip library: http://iamceege.github.io/tooltipster/ -->
+    <link href="css/tooltipster.bundle.min.css" rel="stylesheet">
+    <link href="css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-borderless.min.css" rel="stylesheet">
+	
+    <link href="css/pace-loader.css" rel="stylesheet">
+    <link href="css/select2.min.css" rel="stylesheet">
+    <link href="css/custom-plugin.css" rel="stylesheet">
+	<?php $this->head() ?>
+</head>
+<body class="theme-dark-blue loaded">
+	
+		<?php
+	} } ?>
+		
+
 
 
 <!-- content section -->
@@ -149,7 +194,10 @@ if(isset($cont) && isset($tit)) {
 
 <!--</div>-->
 <!-- end of content section -->
- 
+ <?php $cont = isset(Yii::$app->controller->id) ? Yii::$app->controller->id : '';
+	$tit = isset($this->context->action->id) ? $this->context->action->id : '';
+	if(isset($cont) && isset($tit)) {
+	if($cont == 'site' && ($tit != 'index3')) { ?>
 <?php $this->endBody() ?>
 
 
@@ -333,4 +381,29 @@ if(isset($cont) && isset($tit)) {
         <!-- END Google Map Function And js -->
 
 </html>
-<?php $this->endPage() ?>
+	<?php $this->endPage(); }
+
+	if(isset($cont) && isset($tit)) {
+	if($cont == 'site' && $tit == 'index3') {
+		?>
+	<!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.min.js"></script>    
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="js/vendor/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    
+	<script src="js/cookie.js"></script>
+	<script src="js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.magnific-popup.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap-dialog.min.js" type="text/javascript" charset="utf-8"></script>
+	<!-- tooltip library: http://iamceege.github.io/tooltipster/ -->
+	<script src="js/tooltipster.bundle.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/pace.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/select2.full.min.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script src="js/custom-functions.js"></script>
+	<script src="js/custom-js.js"></script>
+
+	<?php } } } ?>

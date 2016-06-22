@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>Travel Web</title>
+<script src="js/jquery-1.11.0.min.js"></script>
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+<link rel="stylesheet" type="text/css" href="css/template.css">
+<link rel="stylesheet" type="text/css" href="css/custome-responsive.css">
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+ 
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-1.11.0.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+
+
+<!-- Calender Bootstrap -->
+<script src="js/moment-with-locales.js"></script>
+<script src="js/bootstrap-datetimepicker.js"></script>
+<link href="css/bootstrap-datetimepicker.css" rel="stylesheet">
+
+
+
+<!-- Modernizr -->
+<script src="js/modernizr.js"></script>
+</head>
+
+<body>
+
+<!-- header section -->
+<div class="np-header01">
+  <div class="container clearfix">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="logo"><img src="images/logo.png" width="152" height="43"></div>
+      </div>
+      <div class="col-sm-8 clearfix">
+        <div class="social-section clearfix"> <a href="#"><img src="images/facebook-icon.png" ></a> <a href="#"><img src="images/google-icon.png"></a> <a href="#"><img src="images/linkedin-icon.png"></a> </div>
+        <div class="cus-login-section clearfix">
+          <div class="cus-login-part1 clearfix">
+            <div class="clearfix">
+              <input name="1" placeholder="Email Address" type="text" id="1" >
+            </div>
+            <div class="checkbox">
+              <label>
+                <input name="Remember Me" type="checkbox" value="Remember Me">
+                Remember Me </label>
+            </div>
+          </div>
+          <div class="cus-login-part2 clearfix">
+            <div class="clearfix">
+              <input name="1" placeholder="Password" type="text" id="2" >
+            </div>
+            <div > <a href="#"><span class="np-right-caret"></span>Forgot Password?</a>  <a href="#" class="np-mobile-fix"><span class="np-right-caret"></span>Signup</a> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- slider section -->
+
+<div id="slideshow">
+    <div class="clearfix">
+      <div class="flexslider showOnMouseover">
+        <ul class="slides">
+          <li style="height:462px; background:url(images/1.jpg) center top no-repeat; background-size:cover;">&nbsp;
+            
+          </li>
+          <li style="height:462px; background:url(images/2.jpg) center top no-repeat; background-size:cover;">&nbsp;
+            
+          </li>
+          <li style="height:462px; background:url(images/3.jpg) center top no-repeat; background-size:cover;">&nbsp;
+            
+          </li>
+          <li style="height:462px; background:url(images/4.jpg) center top no-repeat; background-size:cover;">&nbsp;
+            
+          </li>
+          <li style="height:462px; background:url(images/5.jpg) center top no-repeat; background-size:cover;">&nbsp;
+            
+          </li>
+ <div style="width:100%; height:93px; background:url(images/banner-belt.png) center top no-repeat; position:absolute; bottom:0px;"></div> 
+ <div class="np-banner-text"> Social travel, Blogs, Trip experiences and Reviews</div>
+
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Start Flex Slider code -->
+    
+    <link href="sliders/css/flexslider.css" rel="stylesheet" type="text/css" />
+    <script src="sliders/js/jquery.flexslider-min.js" type="text/javascript"></script> 
+    <script type="text/javascript">
+
+
+
+(function($){
+
+
+
+    $(window).load(function(){
+
+
+
+        $(".flexslider").flexslider({
+
+
+
+            animation: "fade",				//String: Select your animation type, "fade" or "slide"
+            slideDirection: "horizontal",	//String: Select the sliding direction, "horizontal" or "vertical"
+            slideshow: true,				//Boolean: Animate slider automatically
+            slideshowSpeed: 6000,			//Integer: Set the speed of the slideshow cycling, in milliseconds
+            animationDuration:4000,			//Integer: Set the speed of animations, in milliseconds
+            directionNav: true,				//Boolean: Create navigation for previous/next navigation? (true/false)
+            controlNav: true,				//Boolean: Create navigation for paging control of each clide? Note: Leave true for manualControls usage
+            keyboardNav: true,				//Boolean: Allow slider navigating via keyboard left/right keys
+            mousewheel: false,				//{UPDATED} Boolean: Requires jquery.mousewheel.js (https://github.com/brandonaaron/jquery-mousewheel) - Allows slider navigating via mousewheel
+			smoothHeight: true,
+            randomize: false,				//Boolean: Randomize slide order
+            slideToStart: 0,				//Integer: The slide that the slider should start on. Array notation (0 = first slide)
+            animationLoop: true,			//Boolean: Should the animation loop? If false, directionNav will received "disable" classes at either end
+            pauseOnAction: true,			//Boolean: Pause the slideshow when interacting with control elements, highly recommended.
+            pauseOnHover: false,			//Boolean: Pause the slideshow when hovering over slider, then resume when no longer hovering
+			start: slideComplete,
+			after: slideComplete
+
+
+
+        }).addClass(""); // add shadow to the slider - choose between: lifted, curled, perspective, raised, curved, curved curved-vt-1, curved curved-vt-2, , curved curved-hz-1, curved curved-hz-2, lifted rotated; Demo here: http://nicolasgallagher.com/css-drop-shadows-without-images/demo/
+
+ 		function slideComplete(args) {
+ 			var caption = $(args.container).find('.flex-caption').attr('style', ''),
+ 				thisCaption = $('.flexslider .slides > li.flex-active-slide').find('.flex-caption');
+ 			thisCaption.animate({top:0, opacity:1}, 1200, 'easeOutQuint');
+  		}
+     })
+ })(jQuery);
+
+
+
+</script> 
+    
+    <!-- End Flex Slider code --> 
+    
+    <!-- JavaScript at the bottom for fast page loading --> 
+    
+    <script type="text/javascript" src="sliders/js/plugins.js"></script><!-- jQuery Plugins --> 
+    
+  </div>
+
+<!-- Register Form --> 
+
+<div class="container np-form-fix01">
+
+<div class="np-tb-formbox">
+        <div class="title-01">Signup now, its free</div>
+        <div class="home-reg-form">
+          <form role="form">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="First Name">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Last Name">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Email Address">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Confirm Password">
+            </div>
+            <div class='input-group date' id='datetimepicker2'>
+				<input type='text' class="form-control" placeholder="Birthdate" />
+                				<span class="input-group-addon"><i class="glyphicon glyphicon-calendar " style="color:#0071BD;"></i></span>
+			  </div>
+            <div class="form-group clearfix" style="margin-top:10px;">
+              <div class="radio pull-left" style="margin-right:10px;">
+                <label style="margin-right:15px; color:#fff;">
+                  <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" >
+                  Male </label>
+                <label style="color:#fff;">
+                  <input type="radio" name="optionsRadios" id="optionsRadios1ss" value="option1" >
+                  Female </label>
+              </div>
+            </div>
+            <div class="form-group" style="margin-bottom:0px;">
+              <input type="submit" class="home-submit" value="SIGNUP NOW">
+            </div>
+          </form>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+</div>
+
+<!-- 3 Box --> 
+
+
+<div class="container clearfix np-mobile-fix01">
+  <div class="row">
+    <div class="col-sm-4 clearfix">
+      <div class="tb-iconbox01"><img src="images/ico-1.png"></div>
+      <div class="tb-title01"> <span>Meet traveling companions</span> <span>Post your trip plan and get social.</span> </div>
+    </div>
+    <div class="col-sm-4 clearfix">
+      <div class="tb-iconbox01"><img src="images/ico-2.png"></div>
+      <div class="tb-title01"> <span>Connect with locals</span> <span>Find a homestay or share a coffee.</span> </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="np-fotter clearfix">
+  <div class="container np-fotter-link"><a href="#">About</a> <span>|</span> <a href="#">Privacy</a> <span>|</span> <a href="#">Invite</a> <span>|</span> <a href="#">Terms</a> <span>|</span> <a href="#">Contact Us</a> <span>|</span> <a href="#">Features</a> <span>|</span> <a href="#">Mobile</a> <span>|</span> <a href="#">Developers</a></div>
+</div>
+
+</body>
+
+ 
+   <script type="text/javascript">
+$('#datetimepicker2').datetimepicker({
+        format: "DD-MM-YYYY"         
+    });
+        </script>
+</html>

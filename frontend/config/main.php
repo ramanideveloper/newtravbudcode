@@ -39,11 +39,11 @@ return [
                 'class' => 'yii\authclient\clients\Facebook',
                 'authUrl' => 'https://www.facebook.com/dialog/oauth?display=popup',
               
-				'clientId' => '974478385976123', /* Uncomment this line for local testing */
-                'clientSecret' => 'f5aac5342ae1801ddaf0dbaeb1388093', /* Uncomment this line for local testing */
+				//'clientId' => '974478385976123', /* Uncomment this line for local testing */
+                //'clientSecret' => 'f5aac5342ae1801ddaf0dbaeb1388093', /* Uncomment this line for local testing */
 
-                  //'clientId' => '454389514767288', /* Uncomment this line for Live testing */
-                  //'clientSecret' => '6dad47ca4b21390fa9202f0b30b2e040', /* Uncomment this line for Live testing */
+                  'clientId' => '454389514767288', /* Uncomment this line for Live testing */
+                  'clientSecret' => '6dad47ca4b21390fa9202f0b30b2e040', /* Uncomment this line for Live testing */
 		 
               ],'google' => [
                 'class' => 'yii\authclient\clients\GoogleOAuth',
@@ -98,15 +98,6 @@ return [
         'session' => [
             'name' => 'PHPFRONTSESSID',
             'savePath' => __DIR__ . '/../tmp',
-        ],
-
-        'params' => $params,
-        'modules' => [
-            'gii' => [
-                'class' => 'yii\gii\Module',
-                'allowedIPs' => ['127.0.0.1', '::1', '192.168.1.101'],
-                'password' => '123456'
-            ],
         ],
     ],
     
