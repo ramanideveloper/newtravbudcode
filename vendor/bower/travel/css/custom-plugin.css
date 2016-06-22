@@ -1,0 +1,145 @@
+/* CUSTOM SELECT 2 */
+
+.select2-selection__rendered{
+	background:url(../images/droparrow.png) right 8px no-repeat;
+	padding-right:30px;
+}
+
+.select2-container {
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 0;
+    position: relative;
+    vertical-align: middle;
+	background-color: white;
+    border: 1px solid #ddd;
+}
+
+.select2-container .select2-selection--multiple .select2-selection__rendered {
+    display: inline-block;
+    overflow: hidden;
+    padding-left: 8px;
+	padding-bottom:4px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+	float:left;
+	min-height:24px;
+}
+.select2-container .select2-search--inline {
+    float: left;
+    border: none;
+	width:auto;
+}
+
+.select2-dropdown {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    left: -100000px;
+    width: 100%;
+    z-index: 1051
+}
+.select2-results__option {
+    padding: 3px 6px;
+	font-size:12px;
+	color:#555;
+    user-select: none;
+    -webkit-user-select: none
+}
+.select2-container--default .select2-selection--multiple {
+    background-color: white;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background-color: #eee;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    cursor: default;
+	color:#666;
+	font-size:12px;
+    float: left;
+    margin-right: 5px;
+    margin-top: 5px;
+    padding: 0 5px
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+    color: #999;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: bold;
+    margin-right: 4px
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover {
+    color: #333
+}
+
+.select2-container--default .select2-search--inline .select2-search__field {
+    background: transparent;
+    border: none;
+    outline: 0;
+    box-shadow: none;
+    -webkit-appearance: textfield;
+	width:100% !important;
+}
+.select2-container .select2-selection--multiple{min-height:28px;}
+
+.addpost-tag .select2-selection--multiple{width: 100% !important;}
+.addpost-tag .select2{width: 100% !important;}
+.addpost-tag .selection{width: 100% !important;}
+.addpost-tag .select2-container--default.select2-container--focus .select2-selection--multiple {
+   border: none !important;
+}
+.addpost-tag .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+	margin-right: 10px !important;
+}
+.addpost-tag .select2-selection__rendered{background:none;padding-right:10px;}
+.addpost-tag .select2-container--default .select2-selection--multiple{border:none;}
+.addpost-tag .select2-container .select2-search--inline {width:auto;}
+.mfp-content .select2-container .select2-search--inline {width:auto;}
+.addpost-tag .select2-container .select2-selection--multiple .select2-selection__rendered{padding:0 4px;}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple,
+.select2-container--default .select2-selection--multiple{border:none;}
+.fbdetail-holder .select2-container .select2-search--inline{width:auto;}
+
+.select2-container--default .select2-results__option[aria-selected="true"]{background-color:#f3f3f3;}
+
+/* END CUSTOM SELECT 2 */
+
+/* custom calendar */
+
+.datepick{border:3px solid #fff;overflow:hidden;}
+.datepick-nav, .datepick-ctrl{background-color:#fff;}
+
+.datepick-cmd:hover {background-color: #f5f5f5;}
+.datepick-ctrl .datepick-cmd:hover {background-color: #f5f5f5;}
+
+.datepick-cmd{width:auto;}
+.datepick-cmd-today{display:inline-block;float:none;width:auto;}
+.datepick-nav{text-align:center;}
+
+.date-container .datepick .datepick-ctrl a, .date-container .datepick .datepick-nav a { color: #666 !important;}
+.datepick-month{border:none;}
+.datepick-month-header{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f2f2f2+0,f2f2f2+30,dbdbdb+100 */
+	background: rgb(242,242,242); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(242,242,242,1) 0%, rgba(242,242,242,1) 30%, rgba(219,219,219,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(242,242,242,1) 0%,rgba(242,242,242,1) 30%,rgba(219,219,219,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(242,242,242,1) 0%,rgba(242,242,242,1) 30%,rgba(219,219,219,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', endColorstr='#dbdbdb',GradientType=0 ); /* IE6-9 */
+}
+ .datepick-month-header select, .datepick-month-header input {
+    background-color: #fff;
+    color: #666;
+	font-size: 12px;
+    padding: 2px 5px;
+	border-radius:2px;
+}
+.datepick-month table { margin:5px 0;}
+
+/* end custom calendar */

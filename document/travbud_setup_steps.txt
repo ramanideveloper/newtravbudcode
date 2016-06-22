@@ -1,0 +1,105 @@
+
+==================== SETUP TRAVBUD PROJECT IN LOCAL =================================
+
+1. Open this URL :: https://bitbucket.org and do login using below credentials
+
+pranay@scalsys.com/Moksh$$99
+
+2. https://bitbucket.org/tbportal/travbudcode 
+From clon link on left side copy url
+
+3. Install git shell for your OS
+
+4. Open git shell and move to your xampp path 
+
+5. Paste url you have copied from clone link
+
+6. Download and install mongodb
+
+7. Download and install Robomongo
+
+8. go to https://docs.mongodb.org/manual/tutorial/install-mongodb-on-windows/
+ read section :: Set up the MongoDB environment.
+
+9. create directory \data\db in c:
+
+10. Open robomongo and create connection for localhost
+
+11. Install mongo client in php xampp (add extension=mongodb.so in php.ini file)
+    
+    For mongo client make sure to download it according to your php version.
+    
+    copy and paste mongo client file in php/ext folder in xampp.
+
+12. Do db setting in common/config/main-local.php 
+    
+    Set dns in mongodb section like :: 'dsn' => 'mongodb://localhost:27017/demo',
+
+13. Then finally run localhost/travbudcode in browser and do login 
+
+14. For import/export database i.e dump/restore database of mongodb run below command
+
+   -  run this cmd in system from where you want to take database 
+
+    C:/>   mongodump -d demo --host localhost --out E:/data 
+     (after you run this cmd in E: data folder will be created and db folder is in which you can restore 
+in other system for use same db)
+
+    For this cmd to run environment vaiable must be set in both system to dump and restore db
+
+    - Go to my computer right click and click on properties
+
+    - Then click on Advance System Setting (the last link from left side) 
+    
+    - Here click Environment varible in bottom part
+
+    - Then from System Variables select Path then add ;(semicolon)and then add/append mondodb path till 
+bin i.e like (C:\Program Files\MongoDB\Server\3.2\bin;) to this path varible then press ok ok ok 
+
+15. Now you can restore database which is given from system where you have dump the db
+using below command in cmd.
+
+      - c:> mongorestore -d travelbuddb --host localhost E:\data\demo
+
+So now database will be created
+
+16. For git ignore follow below steps
+
+- Open frontend/backend/common folder and then open config subfolder
+- there will be .gittub file if not seen show hidden files you need to set
+- open that .git file in that mention files or folder names which you dont want to upload when you push from git shell explicitly
+- As that files has code which are the setting for our local db ,local varible settings etc.
+eg. 
+/nbproject/private/
+main-local.php
+params-local.php
+main.php
+
+like this we will list files in that.
+
+
+17. after that add file to git which you have changed using this cmd 
+E:/> git pull origin master
+E:/> git add folder/filename.ext
+
+18. then set message in your changes like
+E:/> git commit -m "message will be here"
+
+19. then push command
+
+E:/> git push origin master
+
+//================ my api url ===================================
+https://console.developers.google.com/apis/credentials?project=travbudapi
+
+
+-=============== live pull push =====================================
+  * open putty from start *
+54.191.134.172 
+** Give below commdands one by one and u will complete pull in live then chk **
+ubuntu
+cd ..
+cd ..
+cd var/www/html
+git pull origin master
+bhumika123

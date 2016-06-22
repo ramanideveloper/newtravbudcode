@@ -1,0 +1,72 @@
+.pheader{position:relative;float:left;width:100%;}
+/*!
+ * Start Bootstrap - Full Slider HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+html,
+body.home-page {
+    height: 100%;
+}
+
+body.home-page .carousel,
+body.home-page .item,
+body.home-page .active {
+    height: 100%;
+}
+
+body.home-page .carousel-inner {
+    height: 100%;
+}
+
+/* Background images are set within the HTML using inline CSS, not here */
+
+body.home-page  .fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.abs-page-content{position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(124,56,23,0.4);overflow:auto;}
+.hcontent-holder{}
+.pcontent{position:relative;float:left;width:100%;}
+.pfooter{position:relative;float:left;width:100%;}
+
+body.home-page .carousel-control{width:50px;background:none;color:#fff !important;z-index:10;}
+body.home-page .carousel-control .icon-next,
+body.home-page .carousel-control .icon-prev{font-size:50px !important;}
+
+body.home-page .carousel-control .icon-prev,
+body.home-page .carousel-control .icon-next,
+body.home-page .carousel-control .glyphicon-chevron-left,
+body.home-page .carousel-control .glyphicon-chevron-right{top:47%;}
+
+body.home-page .carousel-inner > .item{
+	 -webkit-transition: 2s ease-in-out left;
+    -moz-transition:2s ease-in-out left;
+    -o-transition: 2s ease-in-out left;
+    transition: 2s ease-in-out left;
+}
+
+body.home-page .carousel-fade .carousel-inner .item {transition-property: opacity;}
+        
+body.home-page .carousel-fade .carousel-inner .item,
+body.home-page .carousel-fade .carousel-inner .active.left,
+body.home-page .carousel-fade .carousel-inner .active.right {opacity: 0;}
+
+body.home-page .carousel-fade .carousel-inner .active,
+body.home-page .carousel-fade .carousel-inner .next.left,
+body.home-page .carousel-fade .carousel-inner .prev.right {opacity: 1;}
+
+body.home-page .carousel-fade .carousel-inner .next,
+body.home-page .carousel-fade .carousel-inner .prev,
+body.home-page .carousel-fade .carousel-inner .active.left,
+body.home-page .carousel-fade .carousel-inner .active.right {
+	left: 0;
+	transform: translate3d(0, 0, 0);
+}
